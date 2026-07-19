@@ -3,46 +3,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Accessibility Assistant Agent</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Accessibility Toolbar (Fixed at top) -->
-    <nav class="a11y-toolbar" aria-label="Accessibility settings">
-        <div class="toolbar-container">
-            <button id="btn-font-increase" aria-label="Increase text size" title="Increase text size">A+</button>
-            <button id="btn-font-decrease" aria-label="Decrease text size" title="Decrease text size">A-</button>
-            <button id="btn-high-contrast" aria-label="Toggle high contrast mode" title="Toggle high contrast mode"><i class="fas fa-adjust"></i> Contrast</button>
-            <button id="btn-dyslexic-font" aria-label="Toggle dyslexia-friendly font" title="Toggle dyslexia-friendly font"><i class="fas fa-font"></i> Dyslexic Font</button>
-        </div>
-    </nav>
+    <div class="app-shell">
 
-    <header role="banner">
-        <h1>Accessibility Assistant Agent</h1>
-        <p>Har kadam par aapke saath — Divyangjan (PwD) aur Buzurgon ke liye ek Smart AI Sahayak</p>
-    </header>
-
-    <main role="main" class="chat-container">
-        <!-- Live region for screen readers to announce new messages -->
-        <div class="sr-only" aria-live="polite" id="sr-announcer"></div>
-
-        <div id="chat-box" class="chat-box" aria-label="Chat messages history" role="log">
-            <!-- Messages will appear here -->
-            <div class="message ai-message" tabindex="0">
-                Namaste! Main aapka Smart Accessibility Assistant hoon. Main aapko sarkari yojnaon (jaise UDID aur Pension) ki jaankari dene aur kisi bhi jatil (complex) jankari ko aasaan bhasha me samjhane me madad kar sakta hoon. Batiye, aaj main aapki kya sahayata karoon?
+        <!-- App Header -->
+        <header class="app-header" role="banner">
+            <div class="header-row">
+                <div class="brand">
+                    <span class="brand-icon" aria-hidden="true"><i class="fa-solid fa-universal-access"></i></span>
+                    <div class="brand-text">
+                        <h1>Accessibility Sahayak</h1>
+                        <p>Divyangjan &amp; Buzurgon ke liye Smart AI Sahayak</p>
+                    </div>
+                </div>
+                <button id="btn-settings-toggle" class="icon-btn settings-btn" aria-label="Accessibility settings kholen" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-drawer">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
             </div>
-        </div>
+        </header>
 
-        <div class="input-area">
-            <input type="text" id="user-input" aria-label="Type your message here" placeholder="Udaharan: UDID card ke kya fayde hain?" autocomplete="off">
-            <button id="btn-voice" aria-label="Start voice input" title="Voice Input"><i class="fas fa-microphone"></i></button>
-            <button id="btn-send" aria-label="Send message">Bhejein</button>
-        </div>
-    </main>
+        <!-- Backdrop for drawer -->
+        <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+        <!-- Accessibility Bottom-Sheet Drawer -->
+        <nav class="a11y-drawer" id="a11y-drawer" aria-label="Accessibility settings">
+            <div class="drawer-handle" aria-hidden="true"></div>
+            <div class="drawer-header">
+                <h2>Accessibility Settings</h2>
+                <button id="btn-drawer-close" class="icon-btn" aria-label="Settings band karein">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="drawer-grid">
+                <button id="btn-font-increase" class="drawer-option" aria-label="Text size badhayein" title="Increase text size">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-plus"></i></span>
+                    <span>Bada Text</span>
+                </button>
+                <button id="btn-font-decrease" class="drawer-option" aria-label="Text size ghatayein" title="Decrease text size">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-minus"></i></span>
+                    <span>Chota Text</span>
+                </button>
+                <button id="btn-high-contrast" class="drawer-option" aria-label="High contrast mode on ya off karein" title="Toggle high contrast mode">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-circle-half-stroke"></i></span>
+                    <span>High Contrast</span>
+                </button>
+                <button id="btn-dyslexic-font" class="drawer-option" aria-label="Dyslexia friendly font on ya off karein" title="Toggle dyslexia-friendly font">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-font"></i></span>
+                    <span>Dyslexic Font</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Chat -->
+        <main role="main" class="chat-container">
+            <!-- Live region for screen readers to announce new messages -->
+            <div class="sr-only" aria-live="polite" id="sr-announcer"></div>
+
+            <div id="chat-box" class="chat-box" aria-label="Chat messages history" role="log">
+                <!-- Messages will appear here -->
+                <div class="message-row ai-row">
+                    <div class="avatar ai-avatar" aria-hidden="true"><i class="fa-solid fa-robot"></i></div>
+                    <div class="message ai-message" tabindex="0">
+                        Namaste! Main aapka Smart Accessibility Assistant hoon. Main aapko sarkari yojnaon (jaise UDID aur Pension) ki jaankari dene aur kisi bhi jatil (complex) jankari ko aasaan bhasha me samjhane me madad kar sakta hoon. Batiye, aaj main aapki kya sahayata karoon?
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <button id="btn-voice" class="icon-btn voice-btn" aria-label="Voice input shuru karein" title="Voice Input">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <input type="text" id="user-input" aria-label="Apna sandesh yahan likhein" placeholder="Udaharan: UDID card ke kya fayde hain?" autocomplete="off">
+                <button id="btn-send" class="send-btn" aria-label="Sandesh bhejein">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </main>
+
+    </div>
 
     <script src="/static/js/main.js"></script>
 </body>
