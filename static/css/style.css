@@ -1,60 +1,45 @@
 /* =========================================================
-   CSS Variables — theming & accessibility toggles
+   CSS Variables — premium light & dark theming
    ========================================================= */
 :root {
-    --bg-color: #eef1f8;
-    --bg-gradient: linear-gradient(180deg, #eef1f8 0%, #e4e9f7 100%);
-    --text-color: #0f172a;
-    --text-muted: #64748b;
-    --primary-color: #4338ca;
-    --primary-color-2: #6366f1;
-    --primary-hover: #3730a3;
+    --bg-color: #f3f5fb;
+    --bg-gradient: linear-gradient(180deg, #f8f9fd 0%, #eef1fa 100%);
+    --text-color: #1c2333;
+    --text-muted: #6b7280;
+    --primary-color: #4f46e5;
+    --primary-color-2: #7c3aed;
+    --primary-hover: #4338ca;
     --toolbar-bg: #ffffff;
     --chat-ai-bg: #ffffff;
-    --chat-user-bg: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
-    --card-border: #e2e8f0;
+    --chat-user-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    --card-border: #e5e7eb;
     --font-base: 16px;
     --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10);
-    --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.16);
-    --focus-color: #ea580c;
-    --radius-lg: 22px;
+    --shadow-sm: 0 2px 8px rgba(30, 27, 75, 0.06);
+    --shadow-md: 0 8px 24px rgba(30, 27, 75, 0.10);
+    --shadow-lg: 0 16px 44px rgba(30, 27, 75, 0.18);
+    --focus-color: #f59e0b;
     --safe-bottom: env(safe-area-inset-bottom, 0px);
     --safe-top: env(safe-area-inset-top, 0px);
 }
 
-/* High Contrast Theme */
-[data-theme="high-contrast"] {
-    --bg-color: #020617;
-    --bg-gradient: linear-gradient(180deg, #020617 0%, #0b1220 100%);
-    --text-color: #e0e7ff;
-    --text-muted: #a5b4fc;
+/* Dark Theme — premium deep navy/indigo, not a harsh "high-contrast" mode */
+[data-theme="dark"] {
+    --bg-color: #0b1120;
+    --bg-gradient: linear-gradient(180deg, #0b1120 0%, #10182c 100%);
+    --text-color: #e7e9f5;
+    --text-muted: #97a0bb;
     --primary-color: #818cf8;
-    --primary-color-2: #a5b4fc;
+    --primary-color-2: #a78bfa;
     --primary-hover: #a5b4fc;
-    --toolbar-bg: #0f172a;
-    --chat-ai-bg: #1e293b;
-    --chat-user-bg: linear-gradient(135deg, #4338ca 0%, #818cf8 100%);
-    --card-border: #334155;
-    --shadow-sm: none;
-    --shadow-md: none;
-    --shadow-lg: none;
-    --focus-color: #facc15;
-}
-
-[data-theme="high-contrast"] .chat-box,
-[data-theme="high-contrast"] input[type="text"],
-[data-theme="high-contrast"] .message,
-[data-theme="high-contrast"] .a11y-drawer {
-    border: 2px solid #818cf8;
-}
-
-/* Dyslexia Friendly Theme */
-[data-font="dyslexic"] {
-    --font-family: 'Comic Sans MS', 'OpenDyslexic', sans-serif;
-    letter-spacing: 0.06em;
-    word-spacing: 0.18em;
+    --toolbar-bg: #131c33;
+    --chat-ai-bg: #16203a;
+    --chat-user-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --card-border: #263054;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.55);
+    --focus-color: #fbbf24;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -147,6 +132,13 @@ button {
     gap: 10px;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
 .brand {
     display: flex;
     align-items: center;
@@ -208,14 +200,14 @@ button {
     transition: background-color 0.2s, transform 0.15s;
 }
 
-.settings-btn:hover,
-.settings-btn:focus-visible {
+.theme-btn:hover, .theme-btn:focus-visible,
+.settings-btn:hover, .settings-btn:focus-visible {
     background: rgba(255, 255, 255, 0.3);
     outline: 3px solid var(--focus-color);
     outline-offset: 2px;
 }
 
-.settings-btn:active {
+.theme-btn:active, .settings-btn:active {
     transform: scale(0.94);
 }
 
@@ -243,6 +235,8 @@ button {
     right: 0;
     bottom: 0;
     background: var(--toolbar-bg);
+    border: 1px solid var(--card-border);
+    border-bottom: none;
     border-radius: 22px 22px 0 0;
     box-shadow: var(--shadow-lg);
     padding: 10px 20px calc(20px + var(--safe-bottom));
@@ -310,7 +304,7 @@ button {
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: border-color 0.2s, transform 0.15s, background-color 0.2s;
+    transition: border-color 0.2s, transform 0.15s, background-color 0.2s, color 0.2s;
 }
 
 .drawer-option-icon {
@@ -323,6 +317,7 @@ button {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    transition: background-color 0.2s;
 }
 
 .drawer-option:hover,
@@ -334,6 +329,17 @@ button {
 
 .drawer-option:active {
     transform: scale(0.97);
+}
+
+.drawer-option.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-2) 100%);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.drawer-option.active .drawer-option-icon {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
 }
 
 /* =========================================================
