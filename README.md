@@ -1,5 +1,7 @@
 # Accessibility Assistant Agent
 
+🚀 **Live Demo (Web App):** [https://accessibility-assistant-agent.onrender.com](https://accessibility-assistant-agent.onrender.com)
+
 Ye ek AI-powered Accessibility Assistant Agent hai jo Persons with Disabilities (PwD), elderly, aur low-literacy users ko government schemes aur digital services access karne me help karta hai.
 
 ## Features
@@ -14,9 +16,9 @@ Ye ek AI-powered Accessibility Assistant Agent hai jo Persons with Disabilities 
    ```bash
    pip install -r requirements.txt
    ```
-2. Create `.env` file aur apni Anthropic API key daalo:
+2. Create `.env` file aur apni Groq API key daalo:
    ```
-   ANTHROPIC_API_KEY=your_api_key_here
+   GROQ_API_KEY=your_api_key_here
    ```
 3. App run karo:
    ```bash
