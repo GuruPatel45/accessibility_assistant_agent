@@ -1,0 +1,66 @@
+[
+  {
+    "name": "UDID Card (Unique Disability ID)",
+    "disability_types": ["all"],
+    "benefit": "Ek single card for all government benefits and tracking.",
+    "eligibility": "Any person with a certified disability.",
+    "how_to_apply": "Apply online at swavlambancard.gov.in with medical certificate.",
+    "states": "all"
+  },
+  {
+    "name": "ADIP Scheme (Assistance to Disabled Persons)",
+    "disability_types": ["mobility", "visual", "hearing"],
+    "benefit": "Free assistive devices (wheelchair, hearing aid, braille kits, etc.)",
+    "eligibility": "Income < Rs. 22,500 per month, valid disability certificate (40%+).",
+    "how_to_apply": "Nearest ALIMCO center ya district social welfare office.",
+    "states": "all"
+  },
+  {
+    "name": "Divyangjan Pension Scheme (National Social Assistance Programme)",
+    "disability_types": ["all"],
+    "benefit": "Monthly pension (amount varies by state, usually Rs. 300 to Rs. 3000).",
+    "eligibility": "BPL category, 18+ years, 80%+ disability (severe/multiple).",
+    "how_to_apply": "Apply through District Social Welfare Officer or local panchayat/municipality.",
+    "states": "all"
+  },
+  {
+    "name": "Railway/Bus Concession Certificate",
+    "disability_types": ["mobility", "visual", "hearing", "cognitive"],
+    "benefit": "25% to 75% concession in train fares and free/discounted bus travel in state transport.",
+    "eligibility": "Valid disability certificate and specific forms certified by a Govt Doctor.",
+    "how_to_apply": "For railways, get a concession certificate from a Govt Hospital and apply at DRM office.",
+    "states": "all"
+  },
+  {
+    "name": "4% Reservation in Government Jobs",
+    "disability_types": ["visual", "hearing", "mobility", "cognitive"],
+    "benefit": "4% quota in Group A, B, C, D posts in Central/State Government.",
+    "eligibility": "40%+ benchmark disability.",
+    "how_to_apply": "Apply through normal recruitment channels (UPSC, SSC, State PSC) and claim PwD quota.",
+    "states": "all"
+  },
+  {
+    "name": "Deendayal Disabled Rehabilitation Scheme (DDRS)",
+    "disability_types": ["all"],
+    "benefit": "Financial assistance to NGOs providing services like special schools, vocational training, half-way homes.",
+    "eligibility": "Beneficiaries access services through funded NGOs.",
+    "how_to_apply": "Find local NGOs funded under DDRS in your district.",
+    "states": "all"
+  },
+  {
+    "name": "National Fellowship for Students with Disabilities",
+    "disability_types": ["all"],
+    "benefit": "M.Phil / Ph.D fellowship amount (JRF/SRF rates).",
+    "eligibility": "Post-graduate students with disabilities pursuing higher education.",
+    "how_to_apply": "UGC website portal during application cycles.",
+    "states": "all"
+  },
+  {
+    "name": "Accessible India Campaign (Sugamya Bharat Abhiyan) Apps",
+    "disability_types": ["mobility", "visual", "hearing"],
+    "benefit": "Sugamya Bharat App to report inaccessible public spaces and buildings.",
+    "eligibility": "Any citizen can use it to help PwDs.",
+    "how_to_apply": "Download Sugamya Bharat App from Play Store/App Store.",
+    "states": "all"
+  }
+]

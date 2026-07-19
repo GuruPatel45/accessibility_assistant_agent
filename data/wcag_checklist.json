@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1.1.1",
+    "category": "Perceivable",
+    "name": "Non-text Content",
+    "description": "Ensure images have alt text.",
+    "check_html": "img:not([alt]), img[alt='']"
+  },
+  {
+    "id": "1.3.1",
+    "category": "Perceivable",
+    "name": "Info and Relationships",
+    "description": "Proper heading hierarchy (H1 -> H2 -> H3) and semantic tags.",
+    "check_html": "heading_hierarchy"
+  },
+  {
+    "id": "1.4.3",
+    "category": "Perceivable",
+    "name": "Contrast (Minimum)",
+    "description": "Text should have a color contrast ratio of at least 4.5:1.",
+    "check_html": "manual_check_required"
+  },
+  {
+    "id": "2.1.1",
+    "category": "Operable",
+    "name": "Keyboard",
+    "description": "All interactive elements should be keyboard accessible (buttons, links, forms).",
+    "check_html": "manual_check_required"
+  },
+  {
+    "id": "3.1.2",
+    "category": "Understandable",
+    "name": "Language of Parts",
+    "description": "Avoid excessive jargon and keep sentences simple.",
+    "check_text": "readability_score"
+  },
+  {
+    "id": "3.3.2",
+    "category": "Understandable",
+    "name": "Labels or Instructions",
+    "description": "Form inputs must have associated labels.",
+    "check_html": "input:not([id]), label:not([for])"
+  }
+]
