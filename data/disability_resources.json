@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Kiran Mental Health Helpline",
+    "type": "helpline",
+    "contact": "1800-599-0019",
+    "description": "24x7 toll-free helpline by Ministry of Social Justice and Empowerment."
+  },
+  {
+    "name": "National Trust",
+    "type": "ngo",
+    "contact": "thenationaltrust.gov.in",
+    "description": "For Autism, Cerebral Palsy, Mental Retardation and Multiple Disabilities."
+  },
+  {
+    "name": "Enable India",
+    "type": "ngo",
+    "contact": "enableindia.org",
+    "description": "Livelihood and employment for persons with disabilities."
+  },
+  {
+    "name": "NVDA Screen Reader",
+    "type": "assistive_tech",
+    "contact": "nvaccess.org",
+    "description": "Free and open-source screen reader for Windows."
+  }
+]
