@@ -1,0 +1,234 @@
+/* CSS Variables for theming and accessibility toggles */
+:root {
+    /* Premium Slate & Indigo (Light Mode) */
+    --bg-color: #e2e8f0; /* Soft slate-gray, avoids pure white glare */
+    --text-color: #0f172a; /* Deepest slate for text */
+    --primary-color: #4338ca; /* Rich Premium Indigo */
+    --primary-hover: #3730a3;
+    --toolbar-bg: #f8fafc; /* Lighter slate for elevation */
+    --chat-ai-bg: #ffffff; /* AI message cleanly pops out */
+    --chat-user-bg: #e0e7ff; /* Soft indigo tint for user message */
+    --font-base: 16px;
+    --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --focus-color: #ea580c; /* Deep Orange for sharp focus rings */
+}
+
+/* High Contrast Theme (Dark Cyber Indigo) */
+[data-theme="high-contrast"] {
+    --bg-color: #020617; /* Deepest night-blue/black */
+    --text-color: #e0e7ff; /* Bright icy indigo text (high contrast) */
+    --primary-color: #818cf8; /* Vibrant neon Indigo */
+    --primary-hover: #a5b4fc;
+    --toolbar-bg: #0f172a; /* Dark slate */
+    --chat-ai-bg: #1e293b; /* Raised dark slate */
+    --chat-user-bg: #1e1b4b; /* Very deep indigo */
+    --shadow: none;
+    --focus-color: #facc15; /* Bright yellow for focus rings */
+}
+
+[data-theme="high-contrast"] .chat-box,
+[data-theme="high-contrast"] input[type="text"],
+[data-theme="high-contrast"] .message {
+    border: 2px solid #818cf8;
+}
+
+/* Dyslexia Friendly Theme */
+[data-font="dyslexic"] {
+    --font-family: 'Comic Sans MS', 'OpenDyslexic', sans-serif;
+    letter-spacing: 0.1em;
+    word-spacing: 0.2em;
+}
+
+/* Motion sensitivity check */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Toolbar */
+.a11y-toolbar {
+    background-color: var(--toolbar-bg);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.a11y-toolbar button {
+    font-size: 1rem;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.a11y-toolbar button:focus, .a11y-toolbar button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    outline: 3px solid var(--focus-color); /* High visibility focus indicator */
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+}
+
+/* Chat Area */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: var(--toolbar-bg);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.message {
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    max-width: 80%;
+    line-height: 1.5;
+    box-shadow: var(--shadow);
+}
+
+.message:focus {
+    outline: 3px solid var(--focus-color);
+}
+
+.ai-message {
+    background-color: var(--chat-ai-bg);
+    margin-right: auto;
+    border-left: 5px solid var(--primary-color);
+}
+
+.user-message {
+    background-color: var(--chat-user-bg);
+    margin-left: auto;
+    border-right: 5px solid var(--primary-color);
+    text-align: right;
+}
+
+/* Controls */
+.message-controls {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.message-controls button {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.message-controls button:focus {
+    outline: 3px solid var(--focus-color);
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: var(--toolbar-bg);
+    color: var(--text-color);
+    box-shadow: var(--shadow);
+}
+
+input[type="text"]:focus {
+    outline: 3px solid var(--focus-color);
+}
+
+.input-area button {
+    padding: 15px 25px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+}
+
+[data-theme="high-contrast"] .input-area button {
+    color: #000000;
+}
+
+.input-area button:focus, .input-area button:hover {
+    background-color: var(--primary-hover);
+    outline: 3px solid var(--focus-color);
+}
+
+#btn-voice {
+    background-color: #d9534f;
+}
+
+#btn-voice.recording {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
