@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +25,14 @@
                         <p>Divyangjan &amp; Buzurgon ke liye Smart AI Sahayak</p>
                     </div>
                 </div>
-                <button id="btn-settings-toggle" class="icon-btn settings-btn" aria-label="Accessibility settings kholen" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-drawer">
-                    <i class="fa-solid fa-sliders"></i>
-                </button>
+                <div class="header-actions">
+                    <button id="btn-theme-toggle" class="icon-btn theme-btn" aria-label="Dark theme on karein" aria-pressed="false" title="Light / Dark theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button id="btn-settings-toggle" class="icon-btn settings-btn" aria-label="Accessibility settings kholen" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-drawer">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -39,27 +43,27 @@
         <nav class="a11y-drawer" id="a11y-drawer" aria-label="Accessibility settings">
             <div class="drawer-handle" aria-hidden="true"></div>
             <div class="drawer-header">
-                <h2>Accessibility Settings</h2>
+                <h2>Settings</h2>
                 <button id="btn-drawer-close" class="icon-btn" aria-label="Settings band karein">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="drawer-grid">
-                <button id="btn-font-increase" class="drawer-option" aria-label="Text size badhayein" title="Increase text size">
-                    <span class="drawer-option-icon"><i class="fa-solid fa-plus"></i></span>
-                    <span>Bada Text</span>
+                <button id="btn-auto-read" class="drawer-option" aria-pressed="false" aria-label="AI jawab apne aap sunayein">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-headphones"></i></span>
+                    <span>Auto-Read Reply</span>
                 </button>
-                <button id="btn-font-decrease" class="drawer-option" aria-label="Text size ghatayein" title="Decrease text size">
-                    <span class="drawer-option-icon"><i class="fa-solid fa-minus"></i></span>
-                    <span>Chota Text</span>
+                <button id="btn-easy-mode" class="drawer-option" aria-pressed="false" aria-label="Jawab ko saral bhasha mein dikhayein">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <span>Saral Bhasha</span>
                 </button>
-                <button id="btn-high-contrast" class="drawer-option" aria-label="High contrast mode on ya off karein" title="Toggle high contrast mode">
-                    <span class="drawer-option-icon"><i class="fa-solid fa-circle-half-stroke"></i></span>
-                    <span>High Contrast</span>
+                <button id="btn-voice-lang" class="drawer-option" aria-label="Awaaz ki bhasha badlein">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-language"></i></span>
+                    <span id="voice-lang-label">Hindi Awaaz</span>
                 </button>
-                <button id="btn-dyslexic-font" class="drawer-option" aria-label="Dyslexia friendly font on ya off karein" title="Toggle dyslexia-friendly font">
-                    <span class="drawer-option-icon"><i class="fa-solid fa-font"></i></span>
-                    <span>Dyslexic Font</span>
+                <button id="btn-clear-chat" class="drawer-option" aria-label="Naya chat shuru karein">
+                    <span class="drawer-option-icon"><i class="fa-solid fa-broom"></i></span>
+                    <span>Naya Chat</span>
                 </button>
             </div>
         </nav>
