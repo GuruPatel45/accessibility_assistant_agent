@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Assistant Agent</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Accessibility Toolbar (Fixed at top) -->
+    <nav class="a11y-toolbar" aria-label="Accessibility settings">
+        <div class="toolbar-container">
+            <button id="btn-font-increase" aria-label="Increase text size" title="Increase text size">A+</button>
+            <button id="btn-font-decrease" aria-label="Decrease text size" title="Decrease text size">A-</button>
+            <button id="btn-high-contrast" aria-label="Toggle high contrast mode" title="Toggle high contrast mode"><i class="fas fa-adjust"></i> Contrast</button>
+            <button id="btn-dyslexic-font" aria-label="Toggle dyslexia-friendly font" title="Toggle dyslexia-friendly font"><i class="fas fa-font"></i> Dyslexic Font</button>
+        </div>
+    </nav>
+
+    <header role="banner">
+        <h1>Accessibility Assistant Agent</h1>
+        <p>Har kadam par aapke saath — Divyangjan (PwD) aur Buzurgon ke liye ek Smart AI Sahayak</p>
+    </header>
+
+    <main role="main" class="chat-container">
+        <!-- Live region for screen readers to announce new messages -->
+        <div class="sr-only" aria-live="polite" id="sr-announcer"></div>
+
+        <div id="chat-box" class="chat-box" aria-label="Chat messages history" role="log">
+            <!-- Messages will appear here -->
+            <div class="message ai-message" tabindex="0">
+                Namaste! Main aapka Smart Accessibility Assistant hoon. Main aapko sarkari yojnaon (jaise UDID aur Pension) ki jaankari dene aur kisi bhi jatil (complex) jankari ko aasaan bhasha me samjhane me madad kar sakta hoon. Batiye, aaj main aapki kya sahayata karoon?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" aria-label="Type your message here" placeholder="Udaharan: UDID card ke kya fayde hain?" autocomplete="off">
+            <button id="btn-voice" aria-label="Start voice input" title="Voice Input"><i class="fas fa-microphone"></i></button>
+            <button id="btn-send" aria-label="Send message">Bhejein</button>
+        </div>
+    </main>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
